@@ -9,7 +9,7 @@ import ButtonBase from '@material-ui/core/ButtonBase'
 const Nav = () => {
     const styles = make()
     return (
-        <AppBar static style={{background:"#2a2a2b"}}>
+        <AppBar static style={{background:"#2a2a2b", marginBottom: 10}}>
             <Toolbar style={{flexDirection:"row", justifyContent:"center", alignText:"center"}}>
                 <Typography component="h2" variant="h6" color="inherit" className={styles.typo} style={{fontFamily:'serif', width:"20%"}}>
                 Durga Darba : 

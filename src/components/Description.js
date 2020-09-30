@@ -1,31 +1,48 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from "@material-ui/core/styles";
-import Nav from './Nav';
-import Home from './Home';  
+import Nav from './Nav';  
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
+import Grid from '@material-ui/core/Grid';
 import CardContent from '@material-ui/core/CardContent';
 
 const Description = (props) => {
+    const styles = make()
     return (
-            <div>
-                {/* <Nav/> */}
-                <Card>
-                    <CardMedia style={{height:0, paddingTop:'56.25%'}}  image= {require("../images/me.jpeg")} />
-                    <CardContent>
-                        {props.text}
-                    </CardContent>
+            <div style = {{display: "flex", alignItems: 'center', justifyContent: 'center',}}>
+                <Nav/>
+                <Card style = {{width: "100%", justifyContent: "center", alignItems:"center"}}>
+                    <Grid style = {{backgroundColor: "#191919"}} container direction = "column" justify="center" alignItems="center">
+                        <CardMedia className={styles.stuff} image= {props.graphic} item xs={6}/>
+                    </Grid>
+                        <CardContent>
+                            check this project out on <a href="https://repl.it/github/durgadarba97/AStarSnake"> Repl!</a>
+                        </CardContent>
+
+
                 </Card >    
 
             </div>
-
-    
     )
 }
-
+const make = makeStyles((theme) => ({ 
+    stuff : {
+        backgroundColor: "#1e1e1e",
+        width: 500,
+        height: 500,
+        marginTop: 60,
+        [theme.breakpoints.down('sm')]: {
+            marginTop: 75,
+            width: 300,
+            height: 300,
+          },
+          [theme.breakpoints.down('md')]: {
+            width: 400,
+            height: 400,
+          },
+        textAlign: "center"
+    }
+}))
 
 
 export default Description;

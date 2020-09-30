@@ -13,11 +13,10 @@ class Portfolio extends React.Component {
     render() {
         const { classes } = this.props;
         return(
-            <div style={classes.background}>    
-                <Nav></Nav>            
+            <div style={classes.background}>              
                 <BrowserRouter>
                 <Switch>
-                    <Route path="/cactus" render={() => <Description text="This is Cactus"/>}/>
+                    <Route path="/snake" render={() => <Description text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
  
                     <Route path="/" render={() => <Home/>}/>
                 </Switch>
