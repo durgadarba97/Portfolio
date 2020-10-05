@@ -3,7 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from "@material-ui/core/styles";
-import {Router, Route} from "react-router";
 import ButtonBase from '@material-ui/core/ButtonBase'
 
 const Nav = () => {
@@ -15,19 +14,19 @@ const Nav = () => {
                 Durga Darba : 
                 </Typography>
                 
-                <ButtonBase>
+                <ButtonBase href={"/"}>
                     <Typography component="h2" variant="subtitle1" color="white" className={styles.typo}>
                     home
                     </Typography>
                 </ButtonBase>
 
-                <ButtonBase>
+                <ButtonBase href={"#projects"}>
                     <Typography component="h2" variant="subtitle1" color="inherit" className={styles.typo}>
                     projects
                     </Typography>
                 </ButtonBase>
 
-                <ButtonBase>
+                <ButtonBase href={"#contact"}>
                     <Typography component="h2" variant="subtitle1" color="inherit" className={styles.typo}>
                     connect
                     </Typography>

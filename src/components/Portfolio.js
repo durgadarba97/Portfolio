@@ -2,7 +2,8 @@ import React from 'react';
 import Nav from './Nav'
 import Home from './Home';
 import { withStyles } from '@material-ui/core/styles';
-import Description from "./Description"
+import AStarSnake from "./AStarSnake"
+import Cactus from "./Cactus"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 
@@ -16,8 +17,9 @@ class Portfolio extends React.Component {
             <div style={classes.background}>              
                 <BrowserRouter>
                 <Switch>
-                    <Route path="/snake" render={() => <Description text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
- 
+                    <Route path="/snake" render={() => <AStarSnake text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
+                    <Route path="/cactus" render={() => <Cactus text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
+                    <Route path="/imagecompression" render={() => <AStarSnake text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
                     <Route path="/" render={() => <Home/>}/>
                 </Switch>
                 </BrowserRouter>

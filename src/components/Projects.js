@@ -5,18 +5,18 @@ import Typography from '@material-ui/core/Typography';
 
 const images = [
   {
-    url: '/static/images/grid-list/breakfast.jpg',
+    url: 'http://localhost:3000/cactus',
     title: 'Cactus - Programming Language',
     width: '33.3%',
 
   },
   {
-    url: '/static/images/grid-list/burgers.jpg',
+    url: 'http://localhost:3000/snake',
     title: 'Snake',
     width: '33.3%',
   },
   {
-    url: '/static/images/grid-list/camera.jpg',
+    url: 'http://localhost:3000/imagecompression',
     title: 'Image Compression',
     width: '33.3%',
   },
@@ -36,14 +36,9 @@ function Projects() {
           style={{
             width: image.width,
           }}
+          href={image.url}
         >
-          <span
-            className={classes.imageSrc}
-            style={{
-              backgroundImage: `url(${image.url})`,
-            }}
-          />
-          <span className={classes.imageBackdrop} />
+
           <span className={classes.imageButton}>
             <Typography
               component="span"

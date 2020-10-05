@@ -18,7 +18,7 @@ const Home = () => {
                 <CardMedia style={{height:0, paddingTop:'56.25%'}}  image= {require("../images/me.jpeg")} />
         </Card >
 
-        <Card style={{background:"#908a78"}}>
+        <Card style={{background:"#908a78"}} id="projects">
             <Typography variant = {"h6"} style={{padding:"2%", paddingLeft:"8%", color:"white"}}> About Me: </Typography>
             <Typography variant = {"subtitle1"} style={{paddingLeft:"8%", color: "white",width:"75%"}}>
                 Hey, welcome to my portfolio! A lot of things are still in the works, but I wanted a place to put down my thoughts and show off my projects. 

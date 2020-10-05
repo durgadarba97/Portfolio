@@ -11,12 +11,11 @@ import resume from "../images/DurgaDarbaResume.pdf"
 
 
 
-const Contact = () => {
+const Footer = () => {
     const styles = make()
     return ( 
-        <div className={styles.contact} id="contact">
-            <Typography variant = {"h6"} style={{padding:"2%", paddingLeft:"8%", color: "white"}}> Connect: </Typography>
-            <div className={styles.center}>
+        <div className={styles.contact}>
+
                 <IconButton className={styles.links} target="_blank" href="https://github.com/durgadarba97?tab=repositories">
                     < Github/>
                 </IconButton>
@@ -26,8 +25,6 @@ const Contact = () => {
                 <IconButton className={styles.links} target="_blank" href="https://www.linkedin.com/in/durga-darba-96a1841a4/">
                     < Linkdin/>
                 </IconButton>
-            </div>
-
         </div>
     )
 }
@@ -42,9 +39,9 @@ const make = makeStyles((theme) => ({
         justifyContent: 'center',
     },
     links: {
-        padding: 50
+        padding: 20,
     }
 
 }));
 
-export default Contact;
+export default Footer;
