@@ -5,20 +5,16 @@ import Typography from '@material-ui/core/Typography';
 
 const images = [
   {
-    url: 'http://localhost:3000/cactus',
+    url: '/cactus',
     title: 'Cactus - Programming Language',
-    width: '33.3%',
-
   },
   {
-    url: 'http://localhost:3000/snake',
+    url: '/snake',
     title: 'Snake',
-    width: '33.3%',
   },
   {
-    url: 'http://localhost:3000/imagecompression',
+    url: '/imagecompression',
     title: 'Image Compression',
-    width: '33.3%',
   },
 ];
 
@@ -34,7 +30,7 @@ function Projects() {
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
-            width: image.width,
+            width: '33.3%',
           }}
           href={image.url}
         >
