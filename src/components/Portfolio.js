@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from './Nav'
 import Home from './Home';
 import { withStyles } from '@material-ui/core/styles';
 import AStarSnake from "./AStarSnake"
@@ -18,8 +17,8 @@ class Portfolio extends React.Component {
                 <BrowserRouter>
                 <Switch>
                     <Route path="/snake" render={() => <AStarSnake text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
-                    <Route path="/cactus" render={() => <Cactus text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
-                    <Route path="/imagecompression" render={() => <AStarSnake text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/>
+                    <Route path="/cactus" render={() => <Cactus text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/cactus2.gif")}/>}/>
+                    {/* <Route path="/imagecompression" render={() => <AStarSnake text="check this project out on <a href=https://repl.it/github/durgadarba97/AStarSnake > Repl!</a>" graphic = {require("../images/snake.gif")}/>}/> */}
                     <Route path="/" render={() => <Home/>}/>
                 </Switch>
                 </BrowserRouter>

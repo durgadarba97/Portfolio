@@ -12,10 +12,10 @@ const images = [
     url: '/snake',
     title: 'Snake',
   },
-  {
-    url: '/imagecompression',
-    title: 'Image Compression',
-  },
+  // {
+  //   url: '/imagecompression',
+  //   title: 'Image Compression',
+  // },
 ];
 
 function Projects() {
@@ -30,7 +30,7 @@ function Projects() {
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
-            width: '33.3%',
+            width: '50%',
           }}
           href={image.url}
         >

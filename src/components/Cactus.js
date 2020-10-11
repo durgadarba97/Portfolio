@@ -42,9 +42,11 @@ const Cactus = (props) => {
                             This project taught me quite about the importance of coding in teams. I learned pretty early on that building a language by yourself is pretty difficult because it's hard to predict how people code. For example, when I write a for loop, I tend to put the 
                             {" {"}  at the end of the loop instead of a new line. However, I recognized when testing this, that not all people actually code this way. So when writing the language, I had to figure out how lax I wanted to be with the syntax. I think for sure that working
                             in a team would've helped me realize this idea much quicker. <br/><br/>
-                            By thie end, the heirarchy looked like this:
+                            The code that's running above is this recursive fibonacci sequence written in Cactus:
+                            <CardMedia className={styles.fib} image= {require("../images/fib.jpeg")} item xs={6}/>
                         </Typography>
                         <br/><br/>
+
                         <Typography variant = {"h4"} style={{paddingLeft:"8%", color: "white"}}> To Do </Typography>
                         <Typography variant = {"subtitle1"} style={{paddingLeft:"8%", color: "white", paddingRight:"8%"}}>
                             <ul>
@@ -55,6 +57,14 @@ const Cactus = (props) => {
                             </ul>
                         </Typography>
 
+                        <Typography variant = {"h4"} style={{paddingLeft:"8%", color: "white"}}> Resources </Typography>
+                        <Typography variant = {"subtitle1"} style={{paddingLeft:"8%", color: "white", paddingRight:"8%"}}>
+                            <ul>
+                                <li>https://craftinginterpreters.com/contents.html</li>
+                                <li>https://en.wikipedia.org/wiki/Chomsky_hierarchy</li>
+                                <li>https://ruslanspivak.com/lsbasi-part1/</li>
+                            </ul>
+                        </Typography>
                         </CardContent>
                 </Card >    
 
@@ -63,20 +73,36 @@ const Cactus = (props) => {
     )
 }
 const make = makeStyles((theme) => ({ 
-    media : {
-        backgroundColor: "#1e1e1e",
-        width: 500,
-        height: 500,
+    fib : {
+        width: 1000,
+        height: 600,
         marginTop: 60,
         [theme.breakpoints.down('sm')]: {
             marginTop: 75, 
-            width: 300,
-            height: 300,
-          },
-          [theme.breakpoints.down('md')]: {
-            width: 400,
+            width: 800,
             height: 400,
+            },
+        //   [theme.breakpoints.down('md')]: {
+        //     width: 400,
+        //     height: 400,
+        //   },
+        textAlign: "center"
+    },
+
+    media : {
+        backgroundColor: "#1e1e1e",
+        width: 800,
+        height: 600,
+        marginTop: 60,
+        [theme.breakpoints.down('sm')]: {
+            marginTop: 75, 
+            width: 700,
+            height: 500,
           },
+        //   [theme.breakpoints.down('md')]: {
+        //     width: 400,
+        //     height: 400,
+        //   },
         textAlign: "center"
     },
 
