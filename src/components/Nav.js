@@ -20,13 +20,13 @@ const Nav = () => {
                     </Typography>
                 </ButtonBase>
 
-                <ButtonBase href={"#projects"}>
+                <ButtonBase href={"/#projects"}>
                     <Typography component="h2" variant="subtitle1" color="inherit" className={styles.typo}>
                     projects
                     </Typography>
                 </ButtonBase>
 
-                <ButtonBase href={"#contact"}>
+                <ButtonBase href={"/#contact"}>
                     <Typography component="h2" variant="subtitle1" color="inherit" className={styles.typo}>
                     connect
                     </Typography>

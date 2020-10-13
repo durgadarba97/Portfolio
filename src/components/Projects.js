@@ -3,23 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
-const images = [
-  {
-    url: '/cactus',
-    title: 'Cactus - Programming Language',
-  },
-  {
-    url: '/snake',
-    title: 'Snake',
-  },
-  // {
-  //   url: '/imagecompression',
-  //   title: 'Image Compression',
-  // },
-];
 
-function Projects() {
+
+function Projects(props) {
   const classes = useStyles();
+  const images = props.projects
 
   return (
     <div className={classes.root}>
@@ -30,7 +18,7 @@ function Projects() {
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
-            width: '50%',
+            width: '33.3%',
           }}
           href={image.url}
         >
@@ -54,15 +42,15 @@ function Projects() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    minWidth: 300,
-    width: '100%',
-  },
+  // root: {
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  //   minWidth: 200,
+  //   width: '100%',
+  // },
   image: {
     position: 'relative',
-    height: 200,
+    height: 150,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,

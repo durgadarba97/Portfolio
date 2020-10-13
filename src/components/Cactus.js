@@ -60,9 +60,9 @@ const Cactus = (props) => {
                         <Typography variant = {"h4"} style={{paddingLeft:"8%", color: "white"}}> Resources </Typography>
                         <Typography variant = {"subtitle1"} style={{paddingLeft:"8%", color: "white", paddingRight:"8%"}}>
                             <ul>
-                                <li>https://craftinginterpreters.com/contents.html</li>
-                                <li>https://en.wikipedia.org/wiki/Chomsky_hierarchy</li>
-                                <li>https://ruslanspivak.com/lsbasi-part1/</li>
+                                <li><a href = "https://craftinginterpreters.com/contents.html">Crafting Interpreters Book</a></li>
+                                <li><a href = "https://en.wikipedia.org/wiki/Chomsky_hierarchy">Read A Little About Chomsky's</a></li>
+                                <li><a href = "https://ruslanspivak.com/lsbasi-part1/">A Lisp Interpreter Written in Python</a></li>
                             </ul>
                         </Typography>
                         </CardContent>

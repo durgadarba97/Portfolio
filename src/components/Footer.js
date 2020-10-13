@@ -31,7 +31,8 @@ const Footer = () => {
 
 const make = makeStyles((theme) => ({
     contact: {
-        background: "#cfc7b0"
+        background: "#cfc7b0",
+        overflow: "hidden"
     },
     center: {
         display: 'flex',
