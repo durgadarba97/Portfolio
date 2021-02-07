@@ -6,22 +6,26 @@ import Projects from './Projects'
 import Contact from './Contact'
 import Typography from "@material-ui/core/Typography"
 import Nav from "./Nav"
+import cactus2 from '../images/cactus2.gif'
+import meatabeach from '../images/meatabeach.jpeg';
 
 
 
 const Home = () => {
     const styles = make()
     const projects =   [{
-        url: '/cactus',
-        title: 'Cactus - Programming Language',
+        url : '/cactus',
+        title : 'Cactus - Programming Language',
       },
       {
         url: '/snake',
         title: 'Snake',
+        image : 'portfolio/src/images/cactus2.gif'
       },
       {
         url: '/shell',
-        title: 'Custom C Shell'
+        title: 'Custom C Shell',
+        image : 'portfolio/src/images/cactus2.gif'
       }
     ]
     const upcomingprojects = [{
@@ -35,15 +39,12 @@ const Home = () => {
 
     ]
     return ( 
-    <div >
+    <div className={styles.root}>
+
         <Nav/>
-        {/* <Card className={styles.media}> */}
-                {/* <CardMedia style={{height:0, paddingTop:'56.25%'}}  image= {require("../images/me.jpeg")} /> */}
-        {/* </Card > */}
+        <Projects projects = {projects}/>
 
-        <CardMedia className={styles.media} image= {require("../images/me.jpeg")}/>
-
-        <Card style={{background:"#908a78"}} id="projects">
+        {/* <Card style={{background:"#908a78"}} id="projects">
             <Typography variant = {"h6"} style={{padding:"2%", paddingLeft:"8%", color:"white"}}> About Me: </Typography>
             <Typography variant = {"subtitle1"} style={{paddingLeft:"8%", color: "white",width:"75%"}}>
                 Hey, welcome to my portfolio! A lot of things are still in the works, but I wanted a place to put down my thoughts and show off my projects. 
@@ -55,13 +56,24 @@ const Home = () => {
             <Projects projects = {upcomingprojects}/>
             
         </Card>
-        <Contact/>
+        <Contact/> */}
     </div>
 
     )
 }
 
 const make = makeStyles((theme) => ({ 
+    root : {
+        minHeight : '100vh',
+        minWidth : '100vw',
+        backgroundImage : `url(${meatabeach})`,
+        backgroundPosition: '50% 50%', 
+        backgroundRepeat : 'no-repeat',
+        backgroundSize: 'cover',
+        // justifyContent: "center",
+        // alignItems: "center",
+        // display: "flex",
+    },
     paper : {
         height: "10%",
         width:"95%",

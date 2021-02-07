@@ -12,7 +12,7 @@ const Conway = (props) => {
     const styles = make()
     return (
         <div style = {{alignItems: 'center', justifyContent: 'center',}}>
-                <Nav/>
+                {/* <Nav/> */}
                 <Card style = {{width: "100%", justifyContent: "center", alignItems:"center",  backgroundColor:"#908a78", color:"white"}}>
                     
                         <CardContent style = {{marginTop: 60, height: "100%"}}>

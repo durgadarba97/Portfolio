@@ -2,107 +2,69 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-
-
+import Paper from '@material-ui/core/Paper';
+import CardMedia from '@material-ui/core/CardMedia';
 
 function Projects(props) {
-  const classes = useStyles();
-  const images = props.projects
-
+  const styles = useStyles();
+  const projects = props.projects
+  
   return (
-    <div className={classes.root}>
-      {images.map((image) => (
-        <ButtonBase
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: '33.3%',
-          }}
-          href={image.url}
-        >
+    <div className={styles.root}>
+      {
+        projects.map((proj) => (
+          <Paper className={styles.paper} elevation={0}>
+            <span className={styles.title}>
+              <Typography> Snake </Typography>
+              <Typography className={styles.description}> This is thedescriptio n.asd, fnas;dlfn;asl fmns;a,mfns.,mf.s,dmnfs ,mfn.as,malsdkf sldfm.s,maa jshgdkfjhsfdkjahsgfkjhasgdfkj hasgdfkjhdsacbkjbsjsdcjs hbdcjhfjhgasj dfhgaskjfhgaksjdfhgajshfgka jshdgfakjshgf djhagskdhjfgs akhjdf/.,as.a,a/dmfa</Typography>
+            </span>
 
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-              {image.title}
-              <span className={classes.imageMarked} />
-              
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
+            <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
+          </Paper>
+        ))
+      }
+
     </div>
+
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   display: 'flex',
-  //   flexWrap: 'wrap',
-  //   minWidth: 200,
-  //   width: '100%',
-  // },
-  image: {
-    position: 'relative',
-    height: 150,
-    [theme.breakpoints.down('xs')]: {
-      width: '100% !important', // Overrides inline-style
-      height: 100,
+const useStyles = makeStyles({
+    root : {
+      justifyContent : 'center',
+      alignItems : 'center',
+      height : '100vh'
     },
-    '&:hover, &$focusVisible': {
-      zIndex: 1,
-      '& $imageBackdrop': {
-        opacity: 0.15,
-      },
-      '& $imageMarked': {
-        opacity: 0,
-      },
-      '& $imageTitle': {
-        border: '4px solid currentColor',
-      },
+
+    paper : {
+      width : '90vw',
+      // height : '60%',
+      marginTop : '10%',
+      marginBottom : '10%',
+      background : 'black',
+      display : 'flex',
+      flexFlow: 'row wrap',
+      // justifyContent : 'flex-end'
     },
-  },
-  focusVisible: {},
-  imageButton: {
-    position: 'absolute',
 
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: theme.palette.common.white,
-  },
-  imageSrc: {
-    position: 'absolute',
+    title : {
+      color : 'white',
+      width : "40vw",
+      display : 'flex',
+      flexFlow: 'column wrap',
+      justifyContent : 'center',
+      // alignItems : 'center',
+      margin : '5%'
+    },
 
-    backgroundSize: 'cover',
-    backgroundPosition: 'center 40%',
-  },
-  imageBackdrop: {
-    position: 'absolute',
+    image : {
+      // position : 'absolute',
+      width : '40vw',
+      paddingTop : '10%'
+      // paddingTop: '10%', // 16:9,
+      // marginTop:'30'50
 
-    backgroundColor: theme.palette.common.black,
-    // opacity: 0.4,
-    transition: theme.transitions.create('opacity'),
-  },
-  imageTitle: {
-    position: 'relative',
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
-  },
-  imageMarked: {
-    height: 3,
-    width: 18,
-    backgroundColor: theme.palette.common.white,
-    position: 'absolute',
-    bottom: -2,
-    left: 'calc(50% - 9px)',
-    // transition: theme.transitions.create('opacity'),
-  },
-}));
+    }
+});
 
 export default Projects;

@@ -14,7 +14,7 @@ const Cactus = (props) => {
     const styles = make()
     return (
         <div style = {{alignItems: 'center', justifyContent: 'center',}}>
-                <Nav/>
+                {/* <Nav/> */}
                 <Card style = {{width: "100%", justifyContent: "center", alignItems:"center",  backgroundColor:"#908a78", color:"white"}}>
                     <Grid style = {{backgroundColor: "#191919"}} container direction = "column" justify="center" alignItems="center">
                         <CardMedia className={styles.media} image= {props.graphic} item xs={6}/>
