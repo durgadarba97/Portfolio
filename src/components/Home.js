@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography"
 import Nav from "./Nav"
 import cactus2 from '../images/cactus2.gif'
 import meatabeach from '../images/meatabeach.jpeg';
+import AboutMe from './AboutMe';
 
 
 
@@ -40,9 +41,15 @@ const Home = () => {
     ]
     return ( 
     <div className={styles.root}>
+            <div className={styles.main}>
+                <Nav/>
+                <Projects projects = {projects}/>
+            </div>
 
-        <Nav/>
-        <Projects projects = {projects}/>
+            <AboutMe/>
+            <Contact/> 
+
+
 
         {/* <Card style={{background:"#908a78"}} id="projects">
             <Typography variant = {"h6"} style={{padding:"2%", paddingLeft:"8%", color:"white"}}> About Me: </Typography>
@@ -64,15 +71,19 @@ const Home = () => {
 
 const make = makeStyles((theme) => ({ 
     root : {
-        minHeight : '100vh',
+        justifyContent: "center",
+        alignItems: "center",
+    },
+
+    main : {
+        minHeight : '425vh',
         minWidth : '100vw',
         backgroundImage : `url(${meatabeach})`,
-        backgroundPosition: '50% 50%', 
+        backgroundPosition: '50% 25%', 
         backgroundRepeat : 'no-repeat',
         backgroundSize: 'cover',
-        // justifyContent: "center",
-        // alignItems: "center",
-        // display: "flex",
+
+        backgroundAttachment: 'fixed'
     },
     paper : {
         height: "10%",

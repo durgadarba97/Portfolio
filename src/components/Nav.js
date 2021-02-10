@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
@@ -23,8 +23,8 @@ const Nav = () => {
     // const isscroll = useScrollTrigger(); 
     const [scroll, setScroll] = React.useState(false)
 
-    const handlescroll = () => {
-        window.scrollY > 0
+    const handleScroll = () => {
+        window.scrollY > 100
             ? setScroll(true)
             : setScroll(false)
     }
@@ -37,8 +37,15 @@ const Nav = () => {
         setAnchorEl(null);
       };
 
+    useEffect(() => {
+        document.addEventListener('scroll', handleScroll)
+
+    },[])
+
+   
     return (
         <div className = {styles.root}>
+            {document.removeEventListener('scroll', handleScroll)}
             <AppBar static
                 elevation = {0}
                 className={styles.appbar} style={{
@@ -46,9 +53,11 @@ const Nav = () => {
                 backgroundColor: scroll ? "#2a2a2b" : "transparent"
             }}>
                 <Toolbar style={{flexDirection:"row", justifyContent:"center", alignText:"center"}}>
-                    <Typography variant="h5" className={styles.typo}> Durga Darba : </Typography>
+                    <Typography variant="h5" className= {styles.typo} style= {{
+                        color: scroll ? 'white': '#2a2a2b'
+                    }}> Durga Darba : </Typography>
 
-                    <IconButton edge="end" aria-label="menu" onMouseOver={handleClick} onClick={handleClick}  className={styles.iconbutton} 
+                    <IconButton edge="end" aria-label="menu" onMouseOver={handleClick} onClick={handleClick} 
                     style={{
                         transition: 'all 0.25s ease-in-out',
                         color: scroll ? 'white': '#2a2a2b'
@@ -119,7 +128,7 @@ const make = makeStyles({
         display : 'flex',
         justifyContent : 'center',
         // marginTop : '10%',
-        height : '100vh'
+        height : '100vh',
     },
 
     arrow : {
@@ -137,25 +146,11 @@ const make = makeStyles({
     appbar : {
         background:"none", 
         marginBottom: 10,
-        "&:hover": {
-            backgroundColor:"#2a2a2b",
-            transition: 'all 0.25s ease-in-out',
-            "& $iconbutton" : {
-                color: 'white',
-                transition: 'all 0.25s ease-in-out',
-            }
-        },
     },
 
     menu : {
         color: '#2a2a2b',
 
-        "&:hover": {
-            "& $appbar" : {
-                color: '#2a2a2b',
-                transition: 'all 0.25s ease-in-out',
-            }
-        },
     },
 
     iconbutton : {
@@ -168,6 +163,8 @@ const make = makeStyles({
         width: "10%",
         fontFamily : 'arial', 
         color : '#2a2a2b'
+
+        
     }
 
 });

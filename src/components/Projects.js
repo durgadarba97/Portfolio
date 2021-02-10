@@ -4,6 +4,10 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import CardMedia from '@material-ui/core/CardMedia';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import Grid from '@material-ui/core/Grid';
 
 function Projects(props) {
   const styles = useStyles();
@@ -11,7 +15,7 @@ function Projects(props) {
   
   return (
     <div className={styles.root}>
-      {
+      {/* {
         projects.map((proj) => (
           <Paper className={styles.paper} elevation={0}>
             <span className={styles.title}>
@@ -22,7 +26,85 @@ function Projects(props) {
             <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
           </Paper>
         ))
-      }
+      } */}
+
+      {/* <Card className={styles.card}>
+        <CardContent className={styles.title}>
+          <Typography> helloworld </Typography>
+        </CardContent>
+        <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
+      </Card> */}
+
+      {/* <Card className={styles.card}>
+        <CardContent className={styles.title}>
+          <Typography> helloworld </Typography>
+          <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
+        </CardContent>
+      </Card>
+
+      <Card className={styles.card}>
+        <CardContent className={styles.title}>
+          <Typography> helloworld </Typography>
+          <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
+        </CardContent>
+      </Card>
+
+      <Card className={styles.card}>
+        <CardContent className={styles.title}>
+          <Typography> helloworld </Typography>
+          <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
+        </CardContent>
+      </Card> */}
+
+      <Grid container className={styles.card}>
+        <Grid item style={{width: 600}}>
+          <img className={styles.img} alt="fibonacci" src= {require('../images/fib.jpeg')}/>
+        </Grid>
+        <Grid item xs={12} sm container className={styles.title}>
+          <Typography gutterBottom variant="h4"> Cactus</Typography>
+          <Typography gutterBottom variant="h5"> I built an interpreted programming language in Python.</Typography>
+        </Grid>
+      </Grid>
+
+      <Grid container className={styles.card} style={{flexDirection : 'row-reverse', justifyContent : 'flex-end'}}>
+        <Grid item style = {{width : 500}}>
+          <img className={styles.img} alt="snake" src= {require('../images/snake.gif')}/>
+        </Grid>
+        <Grid item xs={12} sm container className={styles.title}>
+          <Typography gutterBottom variant="h4"> Snake </Typography>
+          <Typography gutterBottom variant="h5"> Built Snake and implemented several algortihms to solve itself.</Typography>
+        </Grid>
+      </Grid>
+
+      <Grid container className={styles.card}>
+        <Grid item style={{width: 600}}>
+          <img className={styles.img} alt="shell" src= {require('../images/shell.gif')}/>
+        </Grid>
+        <Grid item xs={12} sm container className={styles.title}>
+          <Typography gutterBottom variant="h4"> Cactus</Typography>
+          <Typography gutterBottom variant="h5"> I built an interpreted programming language in Python.</Typography>
+        </Grid>
+      </Grid>
+
+      <Grid container className={styles.card} style={{flexDirection : 'row-reverse', justifyContent : 'flex-end'}}>
+        <Grid item style = {{width : 500}}>
+          <img className={styles.img} alt="dashcam" src= {require('../images/dashcamgui.png')}/>
+        </Grid>
+        <Grid item xs={12} sm container className={styles.title}>
+          <Typography gutterBottom variant="h4"> Dashcam Defender </Typography>
+          <Typography gutterBottom variant="h5"> A dashcam that reads license plates and proveides data analytics during car accidents.</Typography>
+        </Grid>
+      </Grid>
+
+      <Grid container className={styles.card}>
+        <Grid item style={{width: 600}}>
+          <img className={styles.img} alt="imagecompression" src= {require('../images/imagecomp.png')}/>
+        </Grid>
+        <Grid item xs={12} sm container className={styles.title}>
+          <Typography gutterBottom variant="h4"> Cactus</Typography>
+          <Typography gutterBottom variant="h5"> I built an interpreted programming language in Python.</Typography>
+        </Grid>
+      </Grid>
 
     </div>
 
@@ -31,40 +113,66 @@ function Projects(props) {
 
 const useStyles = makeStyles({
     root : {
-      justifyContent : 'center',
-      alignItems : 'center',
-      height : '100vh'
+      alignItems: "center",
+      height : '100vh',
+      width : '100vw',
+      // background : 'black',
+      display: "flex",
+      flexDirection : 'column'
+      
     },
 
-    paper : {
+    card : {
+      // flexDirection : 'row',
       width : '90vw',
-      // height : '60%',
-      marginTop : '10%',
       marginBottom : '10%',
-      background : 'black',
-      display : 'flex',
-      flexFlow: 'row wrap',
-      // justifyContent : 'flex-end'
+      // marginLeft : '5%',
+      // marginRight : '5%',
+      // width : '90vw',
+      background : '#2a2a2b',
+      // justifyContent : 'flex-end',
+      // minHeight : '25vh',
+      // maxHeight : '50vh',
+      // flex: '1 0 auto',
     },
+
+    // image : {
+    //   // position : 'absolute',
+    //   width : 650,
+    //   marginLeft : '50vw',
+    //   // marginBottom : '0vh',
+    //   height : 400,
+    //   // position : '50% 50%', 
+    //   // paddingTop: '10%', // 16:9,
+    //   // marginTop:'30'50
+    //   // alignSelf : 'flex-end'
+    // },
 
     title : {
       color : 'white',
-      width : "40vw",
+      // height : '100%',
+      // maWidth : '40%',
+      margin : '5%',
+
       display : 'flex',
       flexFlow: 'column wrap',
       justifyContent : 'center',
       // alignItems : 'center',
-      margin : '5%'
+      // background : 'blue'
+    },
+
+    img: {
+      margin: 'auto',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
     },
 
     image : {
-      // position : 'absolute',
-      width : '40vw',
-      paddingTop : '10%'
-      // paddingTop: '10%', // 16:9,
-      // marginTop:'30'50
-
+      width: 600,
+      // height: 128,
     }
+   
 });
 
 export default Projects;
