@@ -1,60 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import CardMedia from '@material-ui/core/CardMedia';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
 
 function Projects(props) {
   const styles = useStyles();
-  const projects = props.projects
   
   return (
-    <div className={styles.root}>
-      {/* {
-        projects.map((proj) => (
-          <Paper className={styles.paper} elevation={0}>
-            <span className={styles.title}>
-              <Typography> Snake </Typography>
-              <Typography className={styles.description}> This is thedescriptio n.asd, fnas;dlfn;asl fmns;a,mfns.,mf.s,dmnfs ,mfn.as,malsdkf sldfm.s,maa jshgdkfjhsfdkjahsgfkjhasgdfkj hasgdfkjhdsacbkjbsjsdcjs hbdcjhfjhgasj dfhgaskjfhgaksjdfhgajshfgka jshdgfakjshgf djhagskdhjfgs akhjdf/.,as.a,a/dmfa</Typography>
-            </span>
-
-            <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
-          </Paper>
-        ))
-      } */}
-
-      {/* <Card className={styles.card}>
-        <CardContent className={styles.title}>
-          <Typography> helloworld </Typography>
-        </CardContent>
-        <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
-      </Card> */}
-
-      {/* <Card className={styles.card}>
-        <CardContent className={styles.title}>
-          <Typography> helloworld </Typography>
-          <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
-        </CardContent>
-      </Card>
-
-      <Card className={styles.card}>
-        <CardContent className={styles.title}>
-          <Typography> helloworld </Typography>
-          <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
-        </CardContent>
-      </Card>
-
-      <Card className={styles.card}>
-        <CardContent className={styles.title}>
-          <Typography> helloworld </Typography>
-          <CardMedia className = {styles.image} image= {require('../images/fib.jpeg')}/>
-        </CardContent>
-      </Card> */}
+    <div className={styles.root} id="projects">
 
       <Grid container className={styles.card}>
         <Grid item style={{width: 600}}>
@@ -97,7 +50,7 @@ function Projects(props) {
       </Grid>
 
       <Grid container className={styles.card}>
-        <Grid item style={{width: 600}}>
+        <Grid item style={{width: 600, }}>
           <img className={styles.img} alt="imagecompression" src= {require('../images/imagecomp.png')}/>
         </Grid>
         <Grid item xs={12} sm container className={styles.title}>
@@ -113,13 +66,13 @@ function Projects(props) {
 
 const useStyles = makeStyles({
     root : {
-      alignItems: "center",
-      height : '100vh',
+      alignItems: 'center',
+      // height : '425vh',
       width : '100vw',
       // background : 'black',
-      display: "flex",
-      flexDirection : 'column'
-      
+      display: 'flex',
+      flexDirection : 'column',
+      // margin : '5%'
     },
 
     card : {
@@ -166,6 +119,7 @@ const useStyles = makeStyles({
       display: 'block',
       maxWidth: '100%',
       maxHeight: '100%',
+
     },
 
     image : {

@@ -4,9 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Projects from './Projects'
 import Contact from './Contact'
-import Typography from "@material-ui/core/Typography"
 import Nav from "./Nav"
-import cactus2 from '../images/cactus2.gif'
 import meatabeach from '../images/meatabeach.jpeg';
 import AboutMe from './AboutMe';
 
@@ -14,40 +12,17 @@ import AboutMe from './AboutMe';
 
 const Home = () => {
     const styles = make()
-    const projects =   [{
-        url : '/cactus',
-        title : 'Cactus - Programming Language',
-      },
-      {
-        url: '/snake',
-        title: 'Snake',
-        image : 'portfolio/src/images/cactus2.gif'
-      },
-      {
-        url: '/shell',
-        title: 'Custom C Shell',
-        image : 'portfolio/src/images/cactus2.gif'
-      }
-    ]
-    const upcomingprojects = [{
-        url: '/imagecompression',
-        title: 'Image Compression',
-    },
-    {
-        url: '/gameoflife',
-        title: 'Conway\'s Game of Life (Image Compression pt.2)',
-    },
 
-    ]
     return ( 
     <div className={styles.root}>
-            <div className={styles.main}>
+            <div className={styles.main} id="home">
                 <Nav/>
-                <Projects projects = {projects}/>
+                <Projects/>
+                <AboutMe/>
+                <Contact/> 
             </div>
 
-            <AboutMe/>
-            <Contact/> 
+
 
 
 
@@ -71,19 +46,19 @@ const Home = () => {
 
 const make = makeStyles((theme) => ({ 
     root : {
-        justifyContent: "center",
-        alignItems: "center",
+
     },
 
     main : {
-        minHeight : '425vh',
+        minHeight : '400vh',
         minWidth : '100vw',
         backgroundImage : `url(${meatabeach})`,
         backgroundPosition: '50% 25%', 
         backgroundRepeat : 'no-repeat',
         backgroundSize: 'cover',
-
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'fixed',
+        justifyContent: "center",
+        alignItems: "center",
     },
     paper : {
         height: "10%",
