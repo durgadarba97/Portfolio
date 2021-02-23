@@ -13,9 +13,8 @@ import Link from '@material-ui/core/Link';
 const Shell = (props) => {
     const styles = make()
     return (
-        <div style = {{alignItems: 'center', justifyContent: 'center',}}>
-                <Nav/>
-                <Card style = {{width: "100%", justifyContent: "center", alignItems:"center",  backgroundColor:"#908a78", color:"white"}}>
+        <div className={styles.root}>
+                {/* <Card style = {{width: "100%", justifyContent: "center", alignItems:"center",  backgroundColor:"#908a78", color:"white"}}>
                     <Grid style = {{backgroundColor: "#191919"}} container direction = "column" justify="center" alignItems="center">
                         <CardMedia className={styles.media} image= {props.graphic} item xs={6}/>
                     </Grid>
@@ -45,29 +44,68 @@ const Shell = (props) => {
                             </ul>
                         </Typography>
                         </CardContent>
-                </Card >    
+                </Card >     */}
+
+                <Nav/>
+
+                <Grid className={styles.mainGrid}>
+                <Typography gutterBottom variant="h4"> Custom C Shell -</Typography>
+                <Typography gutterBottom variant="h5"> A custom bash shell I built in C for my CPRE 381 Operating Systems class.</Typography>
+
+                <img className={styles.img} alt="imagecompression" src= {require('../images/shell.gif')}/>
+
+                <Typography variant = {"h4"}> Features</Typography>
+                        <Typography variant = {"subtitle1"} >
+                            <ul>
+                                <li>All bash commands work</li>
+                            </ul>
+                        </Typography>
+                        <Typography variant = {"h4"}> How I did it </Typography>
+                        <Typography variant = {"subtitle1"}>Check this project out on <a style = {{color : 'white'}} href="https://repl.it/@durgadarba97/shell-2"> Repl!</a><br/><br/></Typography>
+                        <Typography variant = {"subtitle1"}>
+                            In my Operating Systems class, one of the first projects we worked on was building our own custom bash shell. This was easily one of my favorite projects I worked on in school and a lot of the ideas from this directly inspired building Cactus.
+                            I dont really have much to say on this project because it's pretty self explanatory. This project was used in the class to teach important OS concepts such as forking, background and foreground processes, and safe exiting.
+                            This project was incredibly insteresting becuase it gave me a completely new perspective about how Bash works in relation to the OS.<br/><br/>
+                            
+                        </Typography>
+                        <br/><br/>
+
+                        <Typography variant = {"h4"}> To Do </Typography>
+                        <Typography variant = {"subtitle1"}>
+                            <ul>
+                                <li>Implement tab autofill using Trie </li>
+                            </ul>
+                        </Typography>
+
+                </Grid>
+
 
                 <Footer/>
             </div>
     )
 }
 const make = makeStyles((theme) => ({ 
-    media : {
-        backgroundColor: "#1e1e1e",
-        width: 500,
-        height: 400,
-        marginTop: 60,
-        [theme.breakpoints.down('sm')]: {
-            marginTop: 75, 
-            width: 400,
-            height: 350,
-          },
-        //   [theme.breakpoints.down('md')]: {
-        //     width: 400,
-        //     height: 400,
-        //   },
-        textAlign: "center"
+    root : {
+        alignItems: 'center', 
+        justifyContent: 'center',
+        background : '#445068',
+        // width : '100vw',
+        // height : '100vh',
+        color : 'white'
     },
+
+    mainGrid : {
+        margin : '10vh'
+    },
+
+    img: {
+        margin: 'auto',
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+  
+      },
+
 
 
 }))

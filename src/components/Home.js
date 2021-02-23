@@ -1,10 +1,8 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import Projects from './Projects'
 import Contact from './Contact'
-import Nav from "./Nav"
+import HeaderPanel from "./HeaderPanel"
 import meatabeach from '../images/meatabeach.jpeg';
 import AboutMe from './AboutMe';
 
@@ -16,7 +14,7 @@ const Home = () => {
     return ( 
     <div className={styles.root}>
             <div className={styles.main} id="home">
-                <Nav/>
+                <HeaderPanel/>
                 <Projects/>
                 <AboutMe/>
                 <Contact/> 
@@ -57,8 +55,8 @@ const make = makeStyles((theme) => ({
         backgroundRepeat : 'no-repeat',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
-        justifyContent: "center",
-        alignItems: "center",
+        // justifyContent: "center",
+        // alignItems: "center",
     },
     paper : {
         height: "10%",

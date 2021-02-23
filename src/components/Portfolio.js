@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Home from './Home';
-import { withStyles } from '@material-ui/core/styles';
 import AStarSnake from "./AStarSnake";
 import Cactus from "./Cactus";
 import Shell from "./Shell";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import ImageCompression from './ImageCompression';
 import Conway from './Conway';
-import Nav from "./Nav";
-import { makeStyles } from "@material-ui/core/styles";
-import meatabeach from "../images/meatabeach.jpeg"
-
 
 const Portfolio = () => { 
         return(

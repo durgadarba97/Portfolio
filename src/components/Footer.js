@@ -22,7 +22,7 @@ const Footer = () => {
                 <IconButton className={styles.links} target="_blank" href={resume}>
                     < Resume/>
                 </IconButton>
-                <IconButton className={styles.links} target="_blank" href="https://www.linkedin.com/in/durga-darba-96a1841a4/">
+                <IconButton className={styles.links} target="_blank" href="https://www.linkedin.com/in/durgadarba/">
                     < Linkdin/>
                 </IconButton>
         </div>
@@ -31,8 +31,7 @@ const Footer = () => {
 
 const make = makeStyles((theme) => ({
     contact: {
-        background: "#cfc7b0",
-        overflow: "hidden"
+        background: '#d78351',
     },
     center: {
         display: 'flex',

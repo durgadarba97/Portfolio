@@ -1,21 +1,29 @@
 import React, { useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from "@material-ui/core/styles";
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import Icon from '@material-ui/core/Icon';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-import { makeStyles } from "@material-ui/core/styles";
 import ButtonBase from '@material-ui/core/ButtonBase'
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-
 var ReactRotatingText = require("react-rotating-text");
 
 
-const Nav = () => {
+const HeaderPanel = () => {
     const styles = make()
     const [anchorEl, setAnchorEl] = React.useState(null);
+    // const isscroll = useScrollTrigger(); 
+    const [scroll, setScroll] = React.useState(true)
+
+    const handleScroll = () => {
+        window.scrollY > 100 ? setScroll(false) : setScroll(true)
+    }
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
       };
@@ -24,25 +32,30 @@ const Nav = () => {
         setAnchorEl(null);
       };
 
+    useEffect(() => {
+        document.addEventListener('scroll', handleScroll)
+    },[])
 
    
     return (
         <div className = {styles.root}>
-
+            {document.removeEventListener('scroll', handleScroll)}
+            
             <AppBar static
                 elevation = {0}
                 className={styles.appbar} style={{
-                backgroundColor: "#2a2a2b"
+                transition: 'all 0.25s ease-in-out',
+                backgroundColor: scroll ? "transparent" : "#2a2a2b"
             }}>
                 <Toolbar style={{flexDirection:"row", justifyContent:"center", alignText:"center"}}>
                     <Typography variant="h5" className= {styles.typo} style= {{
-                        color: 'white' 
+                        color: scroll ? '#2a2a2b' : 'white' 
                     }}> Durga Darba : </Typography>
 
                     <IconButton edge="end" aria-label="menu" onMouseOver={handleClick} onClick={handleClick} 
                     style={{
                         transition: 'all 0.25s ease-in-out',
-                        color: 'white'
+                        color: scroll ? '#2a2a2b' : 'white'
 
                     }}>
                         <MenuIcon fontSize="large"/>
@@ -83,6 +96,23 @@ const Nav = () => {
                 </Toolbar>
             </AppBar>
             
+            <div className={styles.helloworld}>
+                <Typography variant="h2"> 
+                    <ReactRotatingText items={['Hello, World.', 'Welcome to my website.']} pause={5000} typingInterval={100}/>
+                </Typography>
+            </div>
+
+            <div className={styles.arrow}>
+{/* 
+                <Typography variant="h4" > 
+                        Projects
+                </Typography> */}
+
+                <Icon fontSize={'4rem'}>
+                    <ArrowDownwardIcon />
+                </Icon>
+
+            </div>
         </div>
         
     )
@@ -93,7 +123,7 @@ const make = makeStyles({
         display : 'flex',
         justifyContent : 'center',
         // marginTop : '10%',
-        // height : '100vh',
+        height : '100vh',
     },
 
     arrow : {
@@ -110,7 +140,7 @@ const make = makeStyles({
     },
     appbar : {
         background:"none", 
-        marginBottom: '10vh',
+        marginBottom: 10,
     },
 
     menu : {
@@ -135,4 +165,4 @@ const make = makeStyles({
 });
 
 
-export default Nav;
+export default HeaderPanel;

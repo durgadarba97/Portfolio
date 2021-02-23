@@ -15,23 +15,6 @@ import me from '../images/me.jpeg'
 
 const Contact = () => {
     const styles = make()
-    // return ( 
-    //     <div className={styles.contact} id="contact">
-    //         <Typography variant = {"h6"} style={{padding:"2%", paddingLeft:"8%", color: "white"}}> Connect: </Typography>
-    //         <div className={styles.center}>
-    //             <IconButton className={styles.links} target="_blank" href="https://github.com/durgadarba97?tab=repositories">
-    //                 < Github/>
-    //             </IconButton>
-    //             <IconButton className={styles.links} target="_blank" href={resume}>
-    //                 < Resume/>
-    //             </IconButton>
-    //             <IconButton className={styles.links} target="_blank" href="https://www.linkedin.com/in/durgadarba/">
-    //                 < Linkdin/>
-    //             </IconButton>
-    //         </div>
-
-    //     </div>
-    // )
 
     return (
         <div className={styles.root}>
