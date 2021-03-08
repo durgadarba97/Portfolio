@@ -10,8 +10,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 
-var ReactRotatingText = require("react-rotating-text");
-
 
 const Nav = () => {
     const styles = make()
@@ -68,6 +66,13 @@ const Nav = () => {
                             <ButtonBase href={"/#projects"}>
                                 <Typography component="h2" variant="subtitle1" className={styles.typo}>
                                 projects
+                                </Typography>
+                            </ButtonBase>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose} className={styles.menu}>
+                            <ButtonBase href={"/#aboutme"}>
+                                <Typography component="h2" variant="subtitle1" className={styles.typo}>
+                                about me
                                 </Typography>
                             </ButtonBase>
                         </MenuItem>

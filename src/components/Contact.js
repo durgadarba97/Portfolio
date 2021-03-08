@@ -17,7 +17,7 @@ const Contact = () => {
     const styles = make()
 
     return (
-        <div className={styles.root}>
+        <div className={styles.root} id='contact'>
             <Grid container className={styles.grid}>
                 <Grid item sm className={styles.linkgrid}>
                     <IconButton className={styles.links} target="_blank" href="https://github.com/durgadarba97?tab=repositories" disableRipple={'true'}>
@@ -34,10 +34,10 @@ const Contact = () => {
                     </IconButton> 
                 </Grid>
 
-                <Grid item sm className={styles.avatargrid}>
+                {/* <Grid item sm className={styles.avatargrid}>
                     <Avatar src={me} className={styles.avatar}/>
 
-                </Grid>
+                </Grid> */}
             
             </Grid>
         </div>
@@ -47,14 +47,18 @@ const Contact = () => {
 const make = makeStyles((theme) => ({
     root : {
         width : '100vw',
+        // margins : '10%',
         // minHeight : '75vh',
         // maxHeight : '75vh',
-        background : '#d78351',
+        background : '#445068',
         color : 'white',
         // margin : '5%'
         direction : 'flex',
         justifyContent : 'center',
-        alignItems : 'center'
+        alignItems : 'center',
+        // [theme.breakpoints.down('sm')]: {
+        //     flexDirection : 'column',
+        // },
     },
 
     links : {
@@ -64,11 +68,11 @@ const make = makeStyles((theme) => ({
 
     linkgrid : {
         display : 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent : 'space-evenly',
-        // alignItems : 'center',
+        marginBottom : '10%'
         // [theme.breakpoints.down('sm')]: {
-        //     flexDirection : 'row'
+        //     flexDirection : 'row',
         //   },
     },
 
@@ -78,8 +82,8 @@ const make = makeStyles((theme) => ({
     },
 
     avatar : {
-        height : '50vw',
-        width : '50vw'
+        height : '25vw',
+        width : '25vw'
     }
 
 }));

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from "@material-ui/core/styles";
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import Icon from '@material-ui/core/Icon';
+import Slide from '@material-ui/core/Slide';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import ButtonBase from '@material-ui/core/ButtonBase'
@@ -10,6 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import Link from '@material-ui/core/Link';
+
 
 var ReactRotatingText = require("react-rotating-text");
 
@@ -85,6 +87,13 @@ const HeaderPanel = () => {
                             </ButtonBase>
                         </MenuItem>
                         <MenuItem onClick={handleClose} className={styles.menu}>
+                            <ButtonBase href={"/#aboutme"}>
+                                <Typography component="h2" variant="subtitle1" className={styles.typo}>
+                                about me
+                                </Typography>
+                            </ButtonBase>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose} className={styles.menu}>
                             <ButtonBase href={"/#contact"}>
                                 <Typography component="h2" variant="subtitle1" className={styles.typo}>
                                 connect
@@ -98,21 +107,26 @@ const HeaderPanel = () => {
             
             <div className={styles.helloworld}>
                 <Typography variant="h2"> 
-                    <ReactRotatingText items={['Hello, World.', 'Welcome to my website.']} pause={5000} typingInterval={100}/>
+                    <ReactRotatingText items={['Welcome to my website.', 'Check out everything I\'m working on.']} pause={1000} typingInterval={100}/>
                 </Typography>
             </div>
+            
+            <Slide direction="up" in={true} mountOnEnter timeout={500}>
+                <div className={styles.arrow}>
 
-            <div className={styles.arrow}>
-{/* 
-                <Typography variant="h4" > 
-                        Projects
-                </Typography> */}
 
-                <Icon fontSize={'4rem'}>
-                    <ArrowDownwardIcon />
-                </Icon>
 
-            </div>
+                    <Link href={'/#projects'} underline={'none'} color={'inherit'}>
+                        <Typography variant="h5" > 
+                                Projects
+                        </Typography>
+                        <ArrowDownwardIcon style={{ fontSize: 30 }}/>
+                    </Link>
+                    
+
+
+                </div>
+            </Slide>
         </div>
         
     )
@@ -128,7 +142,12 @@ const make = makeStyles({
 
     arrow : {
         position : 'absolute',
+        width : '100vw',
+        // flexDirection : 'column
+        textAlign : 'center',
+        justifyContent : 'center',
         alignSelf : 'flex-end',
+        // display: 'flex',
         color : 'white',
         marginBottom : '10vh',
     },
